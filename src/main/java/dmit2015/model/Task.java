@@ -1,5 +1,6 @@
 package dmit2015.model;
 
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -8,13 +9,19 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import net.datafaker.Faker;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 import java.util.random.RandomGenerator;
+
+// Step 3, Add Entity Annotation
+@Entity
 
 @Data
 @NoArgsConstructor
 public class Task {
 
+    // Add Id Annotation
+    @Id
     private String id;
 
     @NotBlank(message = "Description is required")
@@ -26,6 +33,26 @@ public class Task {
     private TaskPriority priority;
 
     private boolean done;
+
+    // Add Version Annotations
+    @Version
+    private Integer version;
+
+    // Used for when date was last updated
+    private LocalDateTime createTime;
+    private LocalDateTime updateTime;
+
+    @PrePersist
+    void onCreate() {
+        LocalDateTime now = LocalDateTime.now();
+        createTime = now;
+        updateTime = now;
+    }
+
+    @PreUpdate
+    void onUpdate() {
+        updateTime = LocalDateTime.now();
+    }
 
     // Copy constructor
     public Task(Task other) {
