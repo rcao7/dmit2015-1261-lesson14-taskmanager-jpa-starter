@@ -12,6 +12,8 @@ This practice prepares you for **Assignment 3**, where you will apply the same p
 
 ## How to Use This Repository
 
+Initial Commit Check
+
 This repository is a public starter project for the Lesson 14 TaskManager JPA practice activity.
 
 Do **not** clone the original repository directly unless you only want a read-only copy. If you clone the original repository, you will not be able to push your changes back to GitHub.
