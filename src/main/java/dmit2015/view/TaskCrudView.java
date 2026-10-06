@@ -30,7 +30,9 @@ public class TaskCrudView implements Serializable {
     }
 
     @Inject
-    @Named("memoryTaskService")
+    // Step 5. Update crud vie with JPA implementation
+    // @Named("memoryTaskService")
+    @Named("jakartaPersistenceTaskService")
     private TaskService taskService;
 
     /**
