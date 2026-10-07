@@ -16,4 +16,6 @@ public interface TaskService {
     Task updateTask(Task task);
 
     void deleteTaskById(String id);
+
+    long count();
 }

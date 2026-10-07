@@ -85,4 +85,11 @@ public class TaskJpaService implements TaskService {
         }
     }
 
+    @Override
+    public long count() {
+        return (long) entityManager.createQuery("""
+        select count(t)
+        from Task t
+        """).getSingleResult();
+    }
 }

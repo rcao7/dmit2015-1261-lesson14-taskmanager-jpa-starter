@@ -90,4 +90,9 @@ public class MemoryTaskService implements TaskService {
             throw new NoSuchElementException("Could not find Task with id: " + id);
         }
     }
+
+    @Override
+    public long count() {
+        return tasks.size();
+    }
 }
