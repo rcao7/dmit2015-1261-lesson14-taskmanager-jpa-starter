@@ -18,4 +18,6 @@ public interface TaskService {
     void deleteTaskById(String id);
 
     long count();
+
+    void deleteAllTasks();
 }

@@ -95,4 +95,9 @@ public class MemoryTaskService implements TaskService {
     public long count() {
         return tasks.size();
     }
+
+    @Override
+    public void deleteAllTasks() {
+        tasks.clear();
+    }
 }
